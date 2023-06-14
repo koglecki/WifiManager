@@ -1,0 +1,52 @@
+package com.example.zadaniezaliczeniowe
+
+import android.app.ProgressDialog.show
+import android.content.Intent
+import android.os.Bundle
+import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.room.Room
+import com.example.zadaniezaliczeniowe.data.ReadDatabase
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+
+class ReadListActivity : AppCompatActivity() {
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var database: ReadDatabase
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.read_list_activity)
+        recyclerView = findViewById(R.id.recyclerView)
+
+        recyclerView.layoutManager = LinearLayoutManager(this)
+
+        database = ReadDatabase.getDatabase(applicationContext)
+
+        lifecycleScope.launch {
+            show()
+        }
+
+        val deleteButton : Button = findViewById(R.id.delete)
+        deleteButton.setOnClickListener {
+            GlobalScope.launch(Dispatchers.IO) {
+                database.readDao().deleteReads()
+            }
+        }
+    }
+
+    private suspend fun show() {
+        withContext(Dispatchers.IO) {
+            val readList = database.readDao()
+                .getReads()
+            val adapter = ReadListAdapter(readList) // Provide the list of Read object
+            recyclerView.adapter = adapter
+        }
+    }
+
+}

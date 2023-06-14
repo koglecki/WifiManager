@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/ssid1"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_width="148dp"
+        android:layout_height="match_parent"
+        android:fontFamily="sans-serif"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        tools:text="Sieć1" />
+
+    <TextView
+        android:id="@+id/rssi1"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_height="match_parent"
+
+        android:layout_width="70dp"
+
+        android:fontFamily="sans-serif-medium"
+
+
+        app:layout_constraintStart_toEndOf="@+id/ssid1"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        tools:text="-50 dBm" />
+
+    <TextView
+        android:id="@+id/link_speed"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_height="match_parent"
+
+        android:layout_width="70dp"
+
+        android:fontFamily="sans-serif-medium"
+
+        app:layout_constraintStart_toEndOf="@+id/rssi1"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        tools:text="140 Mbps" />
+
+    <TextView
+        android:id="@+id/frequency"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_height="match_parent"
+
+        android:layout_width="70dp"
+
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintStart_toEndOf="@+id/link_speed"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        tools:text="2.412 GHz" />
+
+    <TextView
+        android:id="@+id/distance"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_height="match_parent"
+
+        android:layout_width="48dp"
+        android:layout_below="@+id/ssid1"
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintStart_toEndOf="@+id/frequency"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        tools:text="2,9 m" />
+</androidx.constraintlayout.widget.ConstraintLayout>
