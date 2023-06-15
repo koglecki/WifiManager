@@ -1,6 +1,5 @@
 package com.example.zadaniezaliczeniowe.data
 
-import android.content.ClipData
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room

@@ -35,7 +35,7 @@
         tools:text="-50 dBm" />
 
     <TextView
-        android:id="@+id/link_speed"
+        android:id="@+id/link_speed1"
         android:layout_marginStart="1dp"
         android:layout_marginEnd="1dp"
         android:layout_height="match_parent"
@@ -50,7 +50,7 @@
         tools:text="140 Mbps" />
 
     <TextView
-        android:id="@+id/frequency"
+        android:id="@+id/frequency1"
         android:layout_marginStart="1dp"
         android:layout_marginEnd="1dp"
         android:layout_height="match_parent"
@@ -58,21 +58,20 @@
         android:layout_width="70dp"
 
         android:fontFamily="sans-serif-medium"
-        app:layout_constraintStart_toEndOf="@+id/link_speed"
+        app:layout_constraintStart_toEndOf="@+id/link_speed1"
         app:layout_constraintTop_toTopOf="parent"
         android:gravity="center"
         tools:text="2.412 GHz" />
 
     <TextView
-        android:id="@+id/distance"
+        android:id="@+id/distance1"
         android:layout_marginStart="1dp"
         android:layout_marginEnd="1dp"
         android:layout_height="match_parent"
 
         android:layout_width="48dp"
-        android:layout_below="@+id/ssid1"
         android:fontFamily="sans-serif-medium"
-        app:layout_constraintStart_toEndOf="@+id/frequency"
+        app:layout_constraintStart_toEndOf="@+id/frequency1"
         app:layout_constraintTop_toTopOf="parent"
         android:gravity="center"
         tools:text="2,9 m" />

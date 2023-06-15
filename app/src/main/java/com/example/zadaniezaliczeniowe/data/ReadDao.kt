@@ -1,8 +1,6 @@
 package com.example.zadaniezaliczeniowe.data
 
-import android.content.ClipData
 import androidx.room.*
-import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface ReadDao {

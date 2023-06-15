@@ -7,11 +7,12 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/test1"
+        android:id="@+id/info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:textSize="20sp"
+        android:text="Parametry aktywnego połączenia:"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,69 +22,129 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:textSize="40sp"
-        app:layout_constraintTop_toBottomOf="@id/test1"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="30sp"
+        android:layout_marginStart="30dp"
+        android:text="SSID:"
+        app:layout_constraintTop_toBottomOf="@id/info"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/ssidText"
+        android:layout_width="285dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:textSize="30sp"
+        android:layout_marginStart="20dp"
+        android:text="unknown ssid"
+        app:layout_constraintTop_toBottomOf="@id/info"
+        app:layout_constraintStart_toEndOf="@+id/ssid" />
 
     <TextView
         android:id="@+id/rssi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:textSize="40sp"
+        android:layout_marginTop="25dp"
+        android:textSize="30sp"
+        android:layout_marginStart="30dp"
+        android:text="RSSI:"
         app:layout_constraintTop_toBottomOf="@id/ssid"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/rssiText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:textSize="30sp"
+        android:layout_marginStart="20dp"
+        android:text="-50 dBm"
+        app:layout_constraintTop_toBottomOf="@id/ssid"
+        app:layout_constraintStart_toEndOf="@+id/rssi" />
 
     <TextView
         android:id="@+id/link_speed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:textSize="40sp"
+        android:layout_marginTop="25dp"
+        android:textSize="30sp"
+        android:layout_marginStart="30dp"
+        android:text="Link speed:"
         app:layout_constraintTop_toBottomOf="@id/rssi"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/link_speedText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:textSize="30sp"
+        android:layout_marginStart="20dp"
+        android:text="144 Mb/s"
+        app:layout_constraintTop_toBottomOf="@id/rssi"
+        app:layout_constraintStart_toEndOf="@+id/link_speed" />
 
     <TextView
         android:id="@+id/frequency"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:textSize="40sp"
+        android:layout_marginTop="25dp"
+        android:textSize="30sp"
+        android:layout_marginStart="30dp"
+        android:text="Frequency:"
         app:layout_constraintTop_toBottomOf="@id/link_speed"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/frequencyText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:textSize="30sp"
+        android:layout_marginStart="20dp"
+        android:text="2412 MHz"
+        app:layout_constraintTop_toBottomOf="@id/link_speed"
+        app:layout_constraintStart_toEndOf="@+id/frequency" />
 
     <TextView
         android:id="@+id/distance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:textSize="40sp"
+        android:layout_marginTop="25dp"
+        android:textSize="30sp"
+        android:layout_marginStart="30dp"
+        android:text="Distance:"
         app:layout_constraintTop_toBottomOf="@id/frequency"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/distanceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:textSize="30sp"
+        android:layout_marginStart="20dp"
+        android:text="2,9 m"
+        app:layout_constraintTop_toBottomOf="@id/frequency"
+        app:layout_constraintStart_toEndOf="@+id/distance" />
 
     <Button
         android:id="@+id/read"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="30dp"
         android:text="wykonaj odczyt"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/history"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/history"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
         android:text="historia odczytów"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

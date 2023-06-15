@@ -18,5 +18,5 @@ data class Read(
     @ColumnInfo(name = "frequency")
     val readFrequency: String,
     @ColumnInfo(name = "distance")
-    val distance: String,
+    val readdistance: String,
 )
