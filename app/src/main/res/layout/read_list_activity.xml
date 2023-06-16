@@ -16,7 +16,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
-        android:text="SSID"
+        android:text="@string/ssid"
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,7 +29,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
-        android:text="RSSI"
+        android:text="@string/rssi"
         app:layout_constraintEnd_toStartOf="@+id/item_2"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,7 +41,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
-        android:text="LinkSpeed"
+        android:text="@string/linkspeed"
         app:layout_constraintEnd_toStartOf="@+id/item_3"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -53,7 +53,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
-        android:text="Frequency"
+        android:text="@string/frequency"
         app:layout_constraintEnd_toStartOf="@+id/item_4"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -64,7 +64,7 @@
         android:layout_marginTop="8dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Distance"
+        android:text="@string/distance"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -89,9 +89,9 @@
         android:id="@+id/delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:layout_marginBottom="20dp"
-        android:text="wyczyść historię"
+        android:text="@string/clean_history"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

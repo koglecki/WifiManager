@@ -3,11 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <!-- -->
+    <!-- Dostęp do informacji o sieci wifi w pobliżu -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <!-- -->
+    <!-- Dostęp do dokładnej lokalizacji -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <!-- -->
+    <!-- Dostęp do przybliżonej lokalizacji -->
 
     <application
         android:allowBackup="true"

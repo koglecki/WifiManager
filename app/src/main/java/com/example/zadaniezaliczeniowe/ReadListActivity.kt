@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.zadaniezaliczeniowe.data.ReadDatabase
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -31,7 +30,7 @@ class ReadListActivity : AppCompatActivity() {
 
         val deleteButton : Button = findViewById(R.id.delete)
         deleteButton.setOnClickListener {
-            GlobalScope.launch(Dispatchers.IO) {
+            lifecycleScope.launch(Dispatchers.IO) {
                 database.readDao().deleteReads()
             }
         }
@@ -41,7 +40,7 @@ class ReadListActivity : AppCompatActivity() {
         withContext(Dispatchers.IO) {
             val readList = database.readDao()
                 .getReads()
-            val adapter = ReadListAdapter(readList) // Provide the list of Read object
+            val adapter = ReadListAdapter(readList)
             recyclerView.adapter = adapter
         }
     }

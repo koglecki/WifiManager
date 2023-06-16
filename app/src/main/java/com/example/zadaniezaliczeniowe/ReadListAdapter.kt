@@ -17,7 +17,6 @@ class ReadListAdapter(private val readList: List<Read>) : RecyclerView.Adapter<R
     override fun onBindViewHolder(holder: ReadViewHolder, position: Int) {
         val currentRead = readList[position]
 
-        // Bind data to views in the ViewHolder
         holder.ssidTextView.text = currentRead.readSSID
         holder.rssiTextView.text = currentRead.readRSSI
         holder.speedTextView.text = currentRead.readSpeed
@@ -30,7 +29,6 @@ class ReadListAdapter(private val readList: List<Read>) : RecyclerView.Adapter<R
     }
 
     class ReadViewHolder(readView: View) : RecyclerView.ViewHolder(readView) {
-        // Declare and initialize views in the item layout
         val ssidTextView: TextView = readView.findViewById(R.id.ssid1)
         val rssiTextView: TextView = readView.findViewById(R.id.rssi1)
         val speedTextView: TextView = readView.findViewById(R.id.link_speed1)

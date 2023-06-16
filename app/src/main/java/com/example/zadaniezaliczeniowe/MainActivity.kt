@@ -13,11 +13,11 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.lifecycleScope
 import androidx.room.Room
 import com.example.zadaniezaliczeniowe.data.Read
 import com.example.zadaniezaliczeniowe.data.ReadDatabase
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import java.text.DecimalFormat
 import java.util.*
@@ -86,7 +86,7 @@ class MainActivity : AppCompatActivity() {
             linkSpeedText.text = linkSpeedString
             frequencyText.text = freqString
             distanceText.text = distString
-            save(ssid, rssiString, linkSpeedString, freqString, distString)
+            saveRecord(ssid, rssiString, linkSpeedString, freqString, distString)
         }
         else {
             infoText.text = "Brak połączenia"
@@ -113,9 +113,9 @@ class MainActivity : AppCompatActivity() {
         return dist
     }
 
-    private fun save(ssid: String, rssi: String, speed: String, frequency: String, distance: String) {
+    private fun saveRecord(ssid: String, rssi: String, speed: String, frequency: String, distance: String) {
         val read = Read(readSSID=ssid, readRSSI=rssi, readSpeed=speed, readFrequency=frequency, readdistance=distance)
-        GlobalScope.launch(Dispatchers.IO) {
+        lifecycleScope.launch(Dispatchers.IO) {
             database.readDao().insert(read)
         }
     }
